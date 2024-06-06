@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 const props = defineProps({
   startAt: Number
@@ -7,8 +7,10 @@ const props = defineProps({
 
 const count = ref(props.startAt)
 
+const emit = defineEmits(['response'])
 function increment() {
   count.value++
+  emit('response', `Incremented to ${count.value}`)
 }
 
 // Watchers

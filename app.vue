@@ -26,13 +26,20 @@ const pElementRef = ref(null)
 onMounted(() => {
   pElementRef.value.textContent = 'Mounted!'
 })
+
+// Emit
+const counterMessage = ref('No counter message yet')
+
 </script>
 
 <template>
   <div>
     The app <span ref="pElementRef">not mounted</span>
   </div>
-  <Counter :start-at="10" />
+  <div>
+    counterMessage: {{ counterMessage }}
+  </div>
+  <Counter :start-at="10" @response="(msg) => counterMessage = msg" />
   
   <form @submit.prevent="addTodo">
     <input v-model="newTodo" required placeholder="new todo">
