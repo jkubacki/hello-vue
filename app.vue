@@ -23,9 +23,20 @@ function addTodo() {
 function removeTodo(todo) {
   todos.value = todos.value.filter((t) => t !== todo)
 }
+
+// Template ref
+const pElementRef = ref(null)
+
+// Lifecycle hooks
+onMounted(() => {
+  pElementRef.value.textContent = 'Mounted!'
+})
 </script>
 
 <template>
+  <div>
+    The app <span ref="pElementRef">not mounted</span>
+  </div>
   <div @click="increment">
     Hello World no {{ count }}.
   </div>
