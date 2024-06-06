@@ -31,6 +31,11 @@ const pElementRef = ref(null)
 onMounted(() => {
   pElementRef.value.textContent = 'Mounted!'
 })
+
+// Watchers
+watch(count, (newCount, oldCount) => {
+  console.log(`Count changed from ${oldCount} to ${newCount}`)
+})
 </script>
 
 <template>
