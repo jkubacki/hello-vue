@@ -16,4 +16,5 @@ function increment() {
   
   <input v-model="inputText" />
   <p v-if="inputText">Text is: {{ inputText }}</p>
+  <p v-else>Text is empty</p>
 </template>
