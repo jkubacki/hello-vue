@@ -1,11 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-
-const count = ref(0)
-
-function increment() {
-  count.value++
-}
+import Counter from './Counter.vue'
 
 let id = 0
 const todos = ref([
@@ -31,20 +26,13 @@ const pElementRef = ref(null)
 onMounted(() => {
   pElementRef.value.textContent = 'Mounted!'
 })
-
-// Watchers
-watch(count, (newCount, oldCount) => {
-  console.log(`Count changed from ${oldCount} to ${newCount}`)
-})
 </script>
 
 <template>
   <div>
     The app <span ref="pElementRef">not mounted</span>
   </div>
-  <div @click="increment">
-    Hello World no {{ count }}.
-  </div>
+  <Counter />
   
   <form @submit.prevent="addTodo">
     <input v-model="newTodo" required placeholder="new todo">
