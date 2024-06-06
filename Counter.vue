@@ -1,7 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 
-const count = ref(0)
+const props = defineProps({
+  startAt: Number
+})
+
+const count = ref(props.startAt)
 
 function increment() {
   count.value++

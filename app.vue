@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from 'vue'
-import Counter from './Counter.vue'
+import { ref } from 'vue';
+import Counter from './Counter.vue';
 
 let id = 0
 const todos = ref([
@@ -32,7 +32,7 @@ onMounted(() => {
   <div>
     The app <span ref="pElementRef">not mounted</span>
   </div>
-  <Counter />
+  <Counter :start-at="10" />
   
   <form @submit.prevent="addTodo">
     <input v-model="newTodo" required placeholder="new todo">
