@@ -15,5 +15,5 @@ function increment() {
   </div>
   
   <input v-model="inputText" />
-  <p>{{ inputText }}</p>
+  <p v-if="inputText">Text is: {{ inputText }}</p>
 </template>
