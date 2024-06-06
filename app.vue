@@ -39,7 +39,7 @@ const counterMessage = ref('No counter message yet')
   <div>
     counterMessage: {{ counterMessage }}
   </div>
-  <Counter :start-at="10" @response="(msg) => counterMessage = msg" />
+  <Counter :start-at="10" @response="(msg) => counterMessage = msg">Number of clicks</Counter>
   
   <form @submit.prevent="addTodo">
     <input v-model="newTodo" required placeholder="new todo">

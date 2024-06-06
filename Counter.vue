@@ -21,6 +21,6 @@ watch(count, (newCount, oldCount) => {
 
 <template>
   <div @click="increment">
-    Hello World no {{ count }}.
+    <slot>Counter</slot> {{ count }}.
   </div>
 </template>
